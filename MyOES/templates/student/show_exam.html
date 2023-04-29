@@ -1,0 +1,63 @@
+{% extends 'student/studentbase.html' %} {% block content %} {%load static%}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+
+<div class="jumbotron my-4" >
+    <h2 style="text-align: center;">Course: {{course.course_name}}</h2>
+    {% for q in questions%}
+    <div class="d-flex w-100 align-items-center">
+        <div class="col-auto flex-shrink-1 flex-grow-1">
+            <h3 class="">{{ forloop.counter }}. {{q.question}}</h3>
+        </div>
+        <div class="col-auto">
+            <h4 style="text-align: right;">[{{q.marks}} Marks]</h4>
+        </div>
+    </div>
+    <input type="hidden" name="csrfmiddlewaretoken" value="C24rUotmdHawVQJL3KrqiWxvti8UffOFYUc8TRbZtLt36AVLdP3jbkzUVe3beRAa">
+    <div class="form-check mx-4 d-flex align-items-center">
+       
+        <label class="form-check-label ml-3" for="option1">
+            1. {{q.option1}}
+        </label>
+    </div>
+
+
+    <div class="form-check mx-4 d-flex align-items-center">
+        
+        <label class="form-check-label ml-3" for="option2">
+            2. {{q.option2}}
+        </label>
+    </div>
+
+
+    <div class="form-check mx-4 d-flex align-items-center">
+        
+        <label class="form-check-label ml-3" for="option3">
+           3. {{q.option3}}
+        </label>
+    </div>
+
+
+    <div class="form-check mx-4 d-flex align-items-center">
+     
+        <label class="form-check-label ml-3" for="option4">
+           4. {{q.option4}}
+        </label>
+    </div>
+    <div class="form-check mx-4 d-flex align-items-center">
+     
+        <label class="form-check-label ml-3" for="option4">
+         Correct Answer:  {{q.answer}}
+        </label>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
