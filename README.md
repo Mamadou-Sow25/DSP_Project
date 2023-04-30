@@ -15,7 +15,9 @@ install all the requirements using pip install commamd
 then run these commands respectiveley
 
 python manage.py makemigrations 
+
 python manage.py migrate
+
 python manage.py runserver 
 
 to login as admin you will need to create a superuser login details
